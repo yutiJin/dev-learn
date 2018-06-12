@@ -1,0 +1,24 @@
+body {
+	font-size: 15px;
+	border: 1px solid #f0f0f0;
+	width: 580px;
+}
+#total {
+	margin-left: 10px;
+}
+.firstTitle {
+	font-size: 2rem;
+	font-weight: bold;
+}
+.headline {
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+.row {
+	display: inline-block;
+	float: left;
+	padding-right: 2rem;
+}
+.contact, .describe {
+	clear: both;
+}

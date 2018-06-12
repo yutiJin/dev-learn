@@ -1,0 +1,87 @@
+#total {
+	width: 100%;
+	font-size: 16px;
+	border: 1px solid #F0F0F0;
+	
+}
+
+.one {
+	width: 100%;
+	margin-top: -24px;
+	padding: 0;
+	background-color: #9d9d9d;
+	vertical-align: middle;
+}
+section .firstTitle {
+	font-size: 1.5rem;
+	font-weight: bold;
+	height: 60px;
+	/*color: white;*/
+	
+	padding-left: 20px;
+	border-bottom: 1px solid #F0F0F0;
+}
+.basic {
+	width: 100%;
+	height: 110px;
+	margin-top: -24px;
+	padding-bottom: 3px;
+	border-bottom: 1px solid #F0F0F0;
+}
+.contact {
+	width: 100%;
+	height: 110px;
+	/*padding-bottom: 3px;*/
+	border-bottom: 1px solid #F0F0F0;
+}
+.describe {
+	width: 100%;
+	height: 110px;
+	margin-top: -13px;
+	border-bottom: 1px solid #F0F0F0;
+}
+
+.education {
+	width: 100%;
+	height: 110px;
+	margin-top: -13px;
+	border-bottom: 1px solid #F0F0F0;
+}
+.exprience {
+	width: 100%;
+	height: 110px;
+	margin-top: -13px;
+	border-bottom: 1px solid #F0F0F0;
+}
+
+.headline {
+	
+	width: 10%;
+	height: 110px;
+	background-color: #F0F0F0;
+	display: inline-block;
+	float: left;
+	
+}
+.headline p {
+	font-size: 1.3rem;
+	font-weight: bold;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.row {
+	display: inline-block;
+	float: left;
+	padding-right: 2rem;
+}
+.contact, .describe, .education, .exprience {
+	clear: both;
+}
+.title strong{
+	margin-left: 20px;
+}
+/*.title p{
+	vertical-align: middle;
+}*/
+

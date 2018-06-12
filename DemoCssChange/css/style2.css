@@ -1,0 +1,35 @@
+body {
+	font-size: 15px;
+	width: 580px;
+}
+.one{
+	width: 33%;
+	height: 650px;
+	float: left;
+	background-color: #66b3ff;
+}
+section .firstTitle {
+	font-size: 2.5rem;
+	font-weight: bold;
+	text-align: center;
+	color: white;
+}
+#total .two {
+	width: 70%;
+	margin-left: 33%;
+	padding: 4%;
+}
+
+.headline {
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+.row {
+	display: inline-block;
+	float: left;
+	padding-right: 2rem;
+}
+.contact, .describe, .education, .exprience {
+	float: left;
+}
+
