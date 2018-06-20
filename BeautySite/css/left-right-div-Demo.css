@@ -1,0 +1,23 @@
+.col {
+	width: 80%;
+	text-align: center;
+	margin: 0 auto;
+	border: 1px solid gray;
+}
+.col h3 {
+	text-align: center;
+}
+.buchong {
+	display: flex;
+}
+.col-one {
+	flex: 1;
+	border: 1px solid gray;
+	margin: 10px;
+}
+.col-two {
+	flex: 1;
+	border: 1px solid gray;
+	margin: 10px;
+}
+
