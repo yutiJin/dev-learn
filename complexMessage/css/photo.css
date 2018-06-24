@@ -1,0 +1,28 @@
+div.contain {
+	position: relative;
+	width: 156px;
+	height: 100px;
+	display: inline-block;
+}
+div.contain div.mask {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.4);
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+div.contain div.mask div.smallmask{
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	margin: 30px auto;
+	background: rgba(192,192,192,0.3) center center;
+}
+div.contain div.mask div.smallmask img {
+	margin: 11px 11px;
+}
+div.contain:hover div.mask{
+	z-index: 1;
+}
