@@ -294,10 +294,11 @@ main div.messageDiv div.arrows {
 
 main div.mainLeft {
 	float: left;
-	width: 34%;
+	width: 33%;
 	height: 85%;
 	overflow-x: hidden;
 	overflow-y: scroll;
+	border-right:1px solid gainsboro;
 }
 main div.mainLeft::-webkit-scrollbar {
 	display: none;
@@ -316,7 +317,6 @@ main div.mainLeft div.person {
 	margin: 0;
 	padding: 0;
 	border-top: 1px solid gainsboro;
-	border-right:1px solid gainsboro;
 	border-left:3px solid dodgerblue;
 	height: 110px;
 	padding-left: 15px;
@@ -361,7 +361,7 @@ main div.mainLeft div.person1 {
 	margin: 0;
 	padding: 0;
 	border-top: 1px solid gainsboro;
-	border-right:1px solid gainsboro;
+	/*border-right:1px solid gainsboro;*/
 	height: 110px;
 	padding-left: 15px;
 	padding-bottom: 10px;
