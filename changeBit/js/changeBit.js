@@ -40,5 +40,4 @@ function ClearNumber() {
 	decNumber.value = '';
 	bit.value = '';
 	spanNum.innerHTML = '';
-
 }

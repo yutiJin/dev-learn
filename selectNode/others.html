@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">    
+    <title>IFE ECMAScript</title>
+    <style>
+        .box{margin: 10px; padding: 10px; border: 1px solid #000;}
+    </style>
+</head>
+<body>        
+    <div id="wrapper">
+        <div id="news-top" class="section1">
+            <h3>Some title</h3>
+            <p>section1</p>
+            <div class="content">
+                <ul>
+                    <li><span>HTML</span><a href="">Some Link1</a></li>
+                    <li><span>JS</span><a class="active" href="">Some Link2</a></li>
+                    <li><span>CSS</span><a href="">Some Link3</a></li>
+                    <li><span>JS</span><a href="">Some Link4</a></li>
+                </ul>
+            </div>
+            <img src="">
+            <p class="">Some Text</p>
+        </div>
+        <div id="news-normal" class="section2">
+            <h3>Some title</h3>
+            <p>section2</p>
+            <div class="content">
+                <ul>
+                    <li><span>HTML</span><a href="">Some Link1</a></li>
+                    <li><span>HTML</span><a href="">Some Link2</a></li>
+                    <li><span>JS</span><a class="active" href="#">Some Link3</a></li>
+                    <li><span>CSS</span><a href="">Some Link4</a></li>
+                </ul>
+            </div>
+            <img src="">
+            <p class="">Some Text</p>
+        </div>     
+        <div class="box">
+            <button id="btn">返回页面中所有li标签</button>
+            <p id="result"></p>
+            <button id="btn2">返回section1下所有span中内容为HTML的span标签</button>
+            <button id="btn3">返回section2下所有span中内容为HTML的span标签</button>
+            <p id="result2"></p>
+            <input id="text4" type="text" placeholder="spanCont">
+            <button id="btn4">section1下所有包含span内容为spanCont的LI标签</button>
+            <button id="btn5">section2下所有包含span内容为spanCont的LI标签</button>
+            <p id="result4"></p>
+            <button id="btn6">section1下class为active的链接中包含的文字内容</button>
+            <button id="btn7">section2下class为active的链接中包含的文字内容</button>
+            <p id="result6"></p>
+        </div> 
+    </div>
+    <script>
+    var btn = document.getElementById("btn");
+    function getAllListItem() {
+        // 返回页面中所有li标签
+        var li = document.getElementsByTagName("li");
+        var result = document.getElementById("result");
+        var list = "";  //显示的初始化变量
+        console.log("所有的li标签: ");
+        for(var i=0; i<li.length; i++){
+            var inner = li[i].innerHTML;  //li的子节点
+            var outer = li[i].outerHTML;  //li的元素及子节点
+            console.log(outer);
+            list += outer;
+        }
+        result.innerHTML = list;
+    }
+    btn.onclick = function(){
+        getAllListItem();
+    }
+    var btn2 = document.getElementById("btn2");
+    var btn3 = document.getElementById("btn3");
+    function findAllHtmlSpanInOneSection(sectionId) {
+        // 返回某个section下所有span中内容为HTML的span标签
+        var id = document.getElementById(sectionId);
+        var span = id.getElementsByTagName("span");
+        var result2 = document.getElementById("result2");
+        var html = "";  //显示的初始化变量
+        console.log("某个section下，所有所包含span: ");
+        for(var i=0; i<span.length; i++){
+            var inner = span[i].innerHTML;  //li的子节点
+            var outer = span[i].outerHTML;  //li的元素及子节点
+            console.log(outer);
+            if(inner == "HTML"){
+                html += outer;
+                console.log("所有span中内容为HTML的span标签: " + outer);
+            }
+        }
+        result2.innerHTML = html;
+    }
+    btn2.onclick = function(){
+        findAllHtmlSpanInOneSection("news-top");
+    }
+    btn3.onclick = function(){
+        findAllHtmlSpanInOneSection("news-normal");
+    }
+    
+    var btn4 = document.getElementById("btn4");
+    function findListItem(sectionId, spanCont) {
+        // 返回某个section下，所有所包含span内容为spanCont的LI标签
+        var id = document.getElementById(sectionId); 
+        var span = id.getElementsByTagName("span");
+        var result4 = document.getElementById("result4");
+        var html = "";  //显示的初始化变量
+        console.log("某个section下，所有所包含span内容为spanCont的LI标签: ");
+        for(var i=0; i<span.length; i++){
+            var inner = span[i].innerHTML;  //li的子节点(包括元素、注释和文本节点)；如果li的子节点包括元素，那么innerText更为合适
+            var outer = span[i].outerHTML;  //li的元素及子节点
+            console.log(outer);
+            if(inner == spanCont){  //如果inner的子节点，等于用户输入的值
+                html += span[i].parentNode.outerHTML;
+                console.log(html);
+            }
+        }
+        result4.innerHTML = html;
+    }
+    btn4.onclick = function(){
+        var text4 = document.getElementById("text4");
+        var input = text4.value.toUpperCase();  //获取输入框的值，转为大写(防止用户输入小写)
+        findListItem("news-top", input);
+    }
+    btn5.onclick = function(){
+        var text4 = document.getElementById("text4");
+        var input = text4.value.toUpperCase();  //获取输入框的值，转为大写(防止用户输入小写)
+        findListItem("news-normal", input);
+    }
+    var btn6 = document.getElementById("btn6");
+    var btn7 = document.getElementById("btn7");
+    function getActiveLinkContent(sectionId) {
+        // 返回某个section下，class为active的链接中包含的文字内容
+        var id = document.getElementById(sectionId);
+        var element = id.getElementsByTagName("*");
+        var result6 = document.getElementById("result6");
+        var html = "";  //显示的初始化变量
+        for( var i=0; i<element.length; i++){
+            var inner = element[i].innerHTML;
+            var outer = element[i].outerHTML;
+            if(element[i].className == "active"){  //只有通过对象属性访问特性时，使用"className",与取得特性getAttribute("class")是一样的结果
+                html += element[i].innerHTML;  //element的子节点(包括元素、注释和文本节点)；如果element的子节点包括元素，那么innerText更为合适
+                console.log("class为active的链接: " + element[i].outerHTML);
+            }
+        }
+        result6.innerHTML = html;
+    }
+    btn6.onclick = function(){
+        getActiveLinkContent("news-top");
+    }
+    btn7.onclick = function(){
+        getActiveLinkContent("news-normal");
+    }
+    </script>
+</body>
+</html>
